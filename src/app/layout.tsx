@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`${vazirmatn.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${vazirmatn.variable} font-sans antialiased min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-1">
           {children}
