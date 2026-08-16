@@ -5,6 +5,8 @@ import { Event, Rating } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Calendar, MapPin, Video, PlayCircle, Star, Heart, Clock, User, MessageCircle } from 'lucide-react';
 import { OtpModal } from '@/components/OtpModal';
+import Image from 'next/image';
+import { toPersianDigits } from '@/lib/utils';
 
 export function EventDetailClient({ event, ratings }: { event: Event, ratings: Rating[] }) {
   const [isRegistered, setIsRegistered] = useState(false);
@@ -35,7 +37,7 @@ export function EventDetailClient({ event, ratings }: { event: Event, ratings: R
           {/* Main Content */}
           <div className="lg:col-span-2 flex flex-col gap-8">
             <div className="rounded-2xl overflow-hidden aspect-[21/9] bg-muted relative border">
-              <img src={event.bannerUrl} alt={event.title} className="w-full h-full object-cover" />
+              <Image src={event.bannerUrl} alt={event.title} fill className="object-cover" priority />
             </div>
 
             <div>
@@ -46,7 +48,7 @@ export function EventDetailClient({ event, ratings }: { event: Event, ratings: R
                 {event.averageRating! > 0 && (
                   <div className="flex items-center gap-1 text-accent-600 bg-accent-100 px-2 py-1 rounded-lg">
                     <Star className="w-4 h-4 fill-current" />
-                    <span className="font-bold">{event.averageRating}</span>
+                    <span className="font-bold">{toPersianDigits(event.averageRating!)}</span>
                   </div>
                 )}
               </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowLeft, Sparkles, Map, MousePointerClick, PartyPopper } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
+import Image from 'next/image';
 import { EventCard } from '@/components/EventCard';
 import { api } from '@/lib/data/mock';
 
@@ -17,17 +18,17 @@ export default async function HomePage() {
               <Sparkles className="w-4 h-4" />
               <span>پلتفرم کشف تجربه‌های واقعی</span>
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold text-primary-900 leading-[1.3]">
-              لحظه‌هایی که زندگی <br /> را می‌سازند، <span className="text-primary">تجربه کن</span>
+            <h1 className="text-4xl lg:text-6xl font-bold text-primary-900 leading-[1.3] animate-reveal-rtl">
+              لحظه‌هایی که زندگی <br /> را می‌سازند، <span className="text-primary-600">تجربه کن</span>
             </h1>
             <p className="text-lg text-neutral-600 max-w-lg leading-relaxed">
-              از کارگاه‌های آنلاین تا دورهمی‌های حضوری. تجربه‌های معنادار را پیدا کن، با یک کلیک به آن‌ها بپیوند، یا خودت میزبان باش.
+              از کارگاه‌های آنلاین گرفته تا دورهمی‌های خودمونی حضوری. تجربه‌هایی که برات معنی دارن رو پیدا کن، با یه کلیک بهشون بپیوند یا خودت میزبان یکی از اونا باش.
             </p>
             <div className="flex flex-wrap gap-4 mt-4">
-              <Link href="/explore" className={buttonVariants({ size: "lg", className: "rounded-full px-8 text-base bg-primary hover:bg-primary-700" })}>
+              <Link href="/explore" className={buttonVariants({ size: "lg", className: "rounded-full px-8 text-base" })}>
                 کشف تجربه‌ها
               </Link>
-              <Link href="/host" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full px-8 text-base border-primary-200 hover:bg-primary-50 text-primary-700" })}>
+              <Link href="/host" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full px-8 text-base" })}>
                 میزبان شوید
               </Link>
             </div>
@@ -35,23 +36,15 @@ export default async function HomePage() {
           
           {/* Hero Animation / Visual */}
           <div className="relative h-[400px] w-full flex items-center justify-center z-10">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary-200 to-accent-100 rounded-full blur-3xl opacity-60 animate-pulse"></div>
-            <div className="relative w-full max-w-md aspect-square bg-white rounded-[2rem] shadow-xl border border-primary-100 p-6 flex flex-col gap-4 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-               {/* Decorative mock UI inside the hero visual */}
-               <div className="w-full h-48 bg-muted rounded-xl overflow-hidden relative">
-                 <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070" className="object-cover w-full h-full" alt="Event visual" />
-                 <div className="absolute bottom-2 left-2 right-2 bg-white/90 backdrop-blur rounded-lg p-3">
-                   <div className="h-4 w-3/4 bg-primary-100 rounded mb-2"></div>
-                   <div className="h-3 w-1/2 bg-neutral-100 rounded"></div>
-                 </div>
-               </div>
-               <div className="flex gap-2">
-                 <div className="h-10 w-10 rounded-full bg-accent-100"></div>
-                 <div className="flex-1 space-y-2 py-1">
-                   <div className="h-3 w-full bg-neutral-100 rounded"></div>
-                   <div className="h-3 w-4/5 bg-neutral-100 rounded"></div>
-                 </div>
-               </div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary-200 to-accent-100 rounded-[3rem] blur-3xl opacity-60 animate-pulse"></div>
+            <div className="relative w-full max-w-md aspect-square bg-white rounded-full shadow-2xl p-2 flex flex-col gap-4 animate-float overflow-hidden border-4 border-white/50">
+               <Image 
+                  src="/hero-collage.jpg" 
+                  alt="Tajrobe Collage" 
+                  fill
+                  className="object-cover rounded-full"
+                  priority
+               />
             </div>
           </div>
         </div>
@@ -62,8 +55,8 @@ export default async function HomePage() {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-foreground mb-6">پیدا کردن رویداد خوب نباید سخت باشه</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            جستجو در سایت‌های شلوغ و بی‌نظم برای پیدا کردن یک رویداد ارزشمند، وقت‌گیر است. 
-            شما لایق تجربه‌هایی هستید که روزمرگی را بشکنند، نه اینکه فقط یک بلیت دیگر بخرید.
+            گشتن تو سایت‌های شلوغ و بی‌نظم برای پیدا کردن یه رویداد ارزشمند، خیلی وقت‌گیره. 
+            شما لایق تجربه‌هایی هستین که روزمرگی رو بشکنن، نه اینکه فقط یه بلیت دیگه بخرین.
           </p>
         </div>
       </section>
@@ -71,10 +64,9 @@ export default async function HomePage() {
       {/* Section 3 — The Guide */}
       <section className="py-20 bg-[#20301C] text-white">
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-3xl font-bold mb-6 text-[#F2F6F0]">ما اینجاییم تا مسیر را ساده کنیم</h2>
+          <h2 className="text-3xl font-bold mb-6 text-[#F2F6F0]">ما اینجاییم تا مسیر رو برات ساده کنیم</h2>
           <p className="text-lg text-[#C3D6BB] leading-relaxed mb-12">
-            در تجربه، ما فضایی ساختیم که میزبانان پرشور و تجربه‌گرایان کنجکاو به هم برسند. 
-            بدون پیچیدگی، فقط تجربه‌های خالص.
+            توی تجربه، فضایی ساختیم تا میزبان‌های پرشور و آدم‌های کنجکاو بتونن راحت همدیگه رو پیدا کنن. بدون دردسر، فقط خودِ تجربه.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-[#3A5631] pt-12">
             <div>
@@ -97,32 +89,32 @@ export default async function HomePage() {
       <section className="py-20 bg-neutral-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-4">چطور کار می‌کند؟</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">چطور کار می‌کنه؟</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 rounded-full bg-primary-100 text-primary flex items-center justify-center mb-6">
-                <Map className="w-10 h-10" />
+                <Map className="w-10 h-10 text-primary-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">۱. یک تجربه پیدا کن</h3>
-              <p className="text-muted-foreground">در بین دسته‌بندی‌ها بگرد و تجربه‌ای که با سلیقه‌ات جور درمی‌آید را انتخاب کن.</p>
+              <h3 className="text-xl font-bold mb-3">۱. یه تجربه پیدا کن</h3>
+              <p className="text-muted-foreground">توی دسته‌بندی‌ها بگرد و تجربه‌ای که با سلیقه‌ت جوره رو انتخاب کن.</p>
             </div>
             
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 rounded-full bg-primary-100 text-primary flex items-center justify-center mb-6">
-                <MousePointerClick className="w-10 h-10" />
+                <MousePointerClick className="w-10 h-10 text-primary-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">۲. با یک کلیک عضو شو</h3>
-              <p className="text-muted-foreground">بدون نیاز به ساخت اکانت پیچیده، فقط با یک ایمیل ثبت‌نامت را قطعی کن.</p>
+              <h3 className="text-xl font-bold mb-3">۲. با یه کلیک عضو شو</h3>
+              <p className="text-muted-foreground">بدون دردسرهای ساخت اکانت، فقط با یه ایمیل ثبت‌نامت رو قطعی کن.</p>
             </div>
             
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 rounded-full bg-primary-100 text-primary flex items-center justify-center mb-6">
-                <PartyPopper className="w-10 h-10" />
+                <PartyPopper className="w-10 h-10 text-primary-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">۳. تجربه‌ش کن</h3>
-              <p className="text-muted-foreground">در زمان مقرر حاضر شو و از یک تجربه بی‌نظیر لذت ببر.</p>
+              <p className="text-muted-foreground">تو زمان مقرر حاضر شو و از یه تجربه بی‌نظیر حسابی لذت ببر.</p>
             </div>
           </div>
         </div>
@@ -132,7 +124,7 @@ export default async function HomePage() {
       <section className="py-24 bg-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8">آماده‌ای تا شروع کنی؟</h2>
-          <Link href="/explore" className={buttonVariants({ size: "lg", className: "rounded-full px-12 text-lg bg-primary hover:bg-primary-700 h-14" })}>
+          <Link href="/explore" className={buttonVariants({ size: "lg", className: "rounded-full px-12 text-lg h-14" })}>
             همین الان تجربه‌ها را ببین
           </Link>
         </div>
@@ -142,7 +134,7 @@ export default async function HomePage() {
       <section className="py-20 bg-accent-100/50">
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <p className="text-xl text-neutral-800 leading-relaxed font-medium">
-            اجازه نده روزهایت شبیه هم باشند. تجربه‌های تازه، آدم‌های جدید و یادگیری مهارت‌های متفاوت منتظر توست.
+            نذار روزهات شبیه هم باشن. تجربه‌های تازه، آدم‌های جدید و یادگیری مهارت‌های متفاوت منتظرته.
           </p>
         </div>
       </section>
@@ -169,9 +161,9 @@ export default async function HomePage() {
       {/* Section 8 — Final CTA */}
       <section className="py-24 bg-[#20301C] text-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-6">تجربه‌ات را بساز</h2>
+          <h2 className="text-4xl font-bold mb-6">تجربه‌ت رو بساز</h2>
           <p className="text-lg text-[#C3D6BB] mb-10 max-w-2xl mx-auto">
-            فرقی نمی‌کند می‌خواهی مهارت جدیدی یاد بگیری یا مهارتت را به دیگران آموزش دهی. اینجا جای توست.
+            فرقی نمی‌کنه بخوای یه مهارت جدید یاد بگیری یا تخصصت رو به بقیه آموزش بدی. اینجا جای توئه.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/explore" className={buttonVariants({ size: "lg", className: "rounded-full px-8 text-base bg-white text-[#20301C] hover:bg-neutral-100" })}>

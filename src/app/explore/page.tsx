@@ -2,6 +2,8 @@ import { Search, Filter } from 'lucide-react';
 import { api } from '@/lib/data/mock';
 import { EventCard } from '@/components/EventCard';
 import { Button } from '@/components/ui/button';
+import { JalaliDatePicker } from '@/components/JalaliDatePicker';
+import { toPersianDigits } from '@/lib/utils';
 
 export default async function ExplorePage() {
   const events = await api.getEvents();
@@ -69,11 +71,11 @@ export default async function ExplorePage() {
           <div className="flex flex-col gap-3">
             <div>
               <label className="text-xs text-muted-foreground mb-1 block">از تاریخ</label>
-              <input type="date" className="w-full text-sm border border-input rounded-md px-3 py-2 bg-background focus:outline-none focus:ring-2 focus:ring-primary" />
+              <JalaliDatePicker placeholder="انتخاب تاریخ" />
             </div>
             <div>
               <label className="text-xs text-muted-foreground mb-1 block">تا تاریخ</label>
-              <input type="date" className="w-full text-sm border border-input rounded-md px-3 py-2 bg-background focus:outline-none focus:ring-2 focus:ring-primary" />
+              <JalaliDatePicker placeholder="انتخاب تاریخ" />
             </div>
           </div>
         </div>
@@ -90,13 +92,13 @@ export default async function ExplorePage() {
               className="w-full h-12 rounded-lg border border-input bg-background px-11 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             />
           </div>
-          <Button size="lg" className="w-full sm:w-auto h-12 px-8 bg-primary hover:bg-primary-700">
+          <Button size="lg" className="w-full sm:w-auto h-12 px-8">
             جستجو
           </Button>
         </div>
 
         <div className="flex items-center justify-between text-sm text-muted-foreground mb-2 mt-4">
-          <span>{events.length} تجربه پیدا شد</span>
+          <span>{toPersianDigits(events.length)} تجربه پیدا شد</span>
           <select className="border-none bg-transparent outline-none focus:ring-0 text-foreground font-medium cursor-pointer">
             <option>مرتب‌سازی: جدیدترین</option>
             <option>مرتب‌سازی: محبوب‌ترین</option>

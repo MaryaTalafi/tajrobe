@@ -2,6 +2,8 @@ import { api, mockUsers } from '@/lib/data/mock';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Users, Edit, Plus, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { toPersianDigits } from '@/lib/utils';
 
 export default async function HostDashboardPage() {
   // Mock the host as u2
@@ -34,8 +36,8 @@ export default async function HostDashboardPage() {
           <div key={event.id} className="bg-white rounded-2xl border shadow-sm overflow-hidden">
             <div className="flex flex-col md:flex-row p-6 gap-6 border-b">
               <div className="w-full md:w-64 shrink-0">
-                <div className="aspect-[16/9] rounded-xl overflow-hidden bg-muted">
-                  <img src={event.bannerUrl} alt={event.title} className="w-full h-full object-cover" />
+                <div className="aspect-[16/9] rounded-xl overflow-hidden bg-muted relative">
+                  <Image src={event.bannerUrl} alt={event.title} fill className="object-cover" />
                 </div>
               </div>
               <div className="flex-1 flex flex-col justify-between">
@@ -57,7 +59,7 @@ export default async function HostDashboardPage() {
                 <div className="flex items-center gap-6 mt-4 text-sm font-medium">
                   <div className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-muted-foreground" />
-                    <span>{event.registrationCount} ثبت‌نامی</span>
+                    <span>{toPersianDigits(event.registrationCount)} ثبت‌نامی</span>
                   </div>
                   <Link href={`/host?edit=${event.id}`} className={buttonVariants({ variant: "outline", size: "sm", className: "flex items-center gap-2" })}>
                     <Edit className="w-4 h-4 shrink-0" />

@@ -26,6 +26,12 @@
 - [x] **Task 1.9:** Polish and Review: Ensure full responsiveness across devices and RTL correctness with real Farsi content.
 - [x] **Task 1.10:** Write and run frontend tests (Component tests via Testing Library, responsive/RTL smoke checks, linting, type-checking).
 - [x] **Task 1.11:** Deliver frontend, stop, and report back for Phase 1 approval before touching backend.
+- [x] **Task 1.12 (Feedback):** Replace Hero visual with an abstract illustration (Lottie/Image).
+- [x] **Task 1.13 (Feedback):** Button Color Audit - enforce primary-600 and hover states.
+- [x] **Task 1.14 (Feedback):** Date Pickers - implement Jalali date picker in Explore page.
+- [x] **Task 1.15 (Feedback):** Hero Headline Typing Animation (RTL).
+- [x] **Task 1.16 (Feedback):** Copy Tone adjustment - less formal, natural spoken Persian.
+- [x] **Task 1.17 (Feedback):** Numeral Consistency - ensure all numerals are Persian (۰-۹).
 
 ### Phase 2: Backend (Only after Phase 1 Sign-off)
 - **Task 2.1:** Setup Prisma schema and PostgreSQL database (including seeded "سایر" fallback category).

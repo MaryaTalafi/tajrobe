@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Event } from '@/types';
 import { Calendar, MapPin, Video, PlayCircle } from 'lucide-react';
+import Image from 'next/image';
 
 export function EventCard({ event }: { event: Event }) {
   const isFree = event.price === null || event.price === 0;
@@ -9,9 +10,10 @@ export function EventCard({ event }: { event: Event }) {
     <Link href={`/events/${event.id}`} className="block h-full outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-xl">
       <div className="group rounded-xl border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col h-full transition-all hover:shadow-md">
         <div className="relative aspect-[16/9] overflow-hidden bg-muted">
-          <img 
+          <Image 
             src={event.bannerUrl} 
             alt={event.title}
+            fill
             className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
           />
           <div className="absolute top-3 right-3 flex gap-2">
