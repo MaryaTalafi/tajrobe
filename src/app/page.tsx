@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft, Sparkles, Map, MousePointerClick, PartyPopper } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { EventCard } from '@/components/EventCard';
 import { api } from '@/lib/data/mock';
 
@@ -24,12 +24,12 @@ export default async function HomePage() {
               از کارگاه‌های آنلاین تا دورهمی‌های حضوری. تجربه‌های معنادار را پیدا کن، با یک کلیک به آن‌ها بپیوند، یا خودت میزبان باش.
             </p>
             <div className="flex flex-wrap gap-4 mt-4">
-              <Button size="lg" className="rounded-full px-8 text-base bg-primary hover:bg-primary-700" asChild>
-                <Link href="/explore">کشف تجربه‌ها</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 text-base border-primary-200 hover:bg-primary-50 text-primary-700" asChild>
-                <Link href="/host">میزبان شوید</Link>
-              </Button>
+              <Link href="/explore" className={buttonVariants({ size: "lg", className: "rounded-full px-8 text-base bg-primary hover:bg-primary-700" })}>
+                کشف تجربه‌ها
+              </Link>
+              <Link href="/host" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full px-8 text-base border-primary-200 hover:bg-primary-50 text-primary-700" })}>
+                میزبان شوید
+              </Link>
             </div>
           </div>
           
@@ -132,9 +132,9 @@ export default async function HomePage() {
       <section className="py-24 bg-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8">آماده‌ای تا شروع کنی؟</h2>
-          <Button size="lg" className="rounded-full px-12 text-lg bg-primary hover:bg-primary-700 h-14" asChild>
-            <Link href="/explore">همین الان تجربه‌ها را ببین</Link>
-          </Button>
+          <Link href="/explore" className={buttonVariants({ size: "lg", className: "rounded-full px-12 text-lg bg-primary hover:bg-primary-700 h-14" })}>
+            همین الان تجربه‌ها را ببین
+          </Link>
         </div>
       </section>
 
@@ -152,12 +152,10 @@ export default async function HomePage() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-3xl font-bold text-foreground">پرطرفدارترین تجربه‌ها</h2>
-            <Button variant="ghost" className="text-primary hover:bg-primary-50" asChild>
-              <Link href="/explore" className="flex items-center gap-2">
-                مشاهده همه
-                <ArrowLeft className="w-4 h-4 shrink-0" />
-              </Link>
-            </Button>
+            <Link href="/explore" className={buttonVariants({ variant: "ghost", className: "text-primary hover:bg-primary-50 flex items-center gap-2" })}>
+              مشاهده همه
+              <ArrowLeft className="w-4 h-4 shrink-0" />
+            </Link>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -176,12 +174,12 @@ export default async function HomePage() {
             فرقی نمی‌کند می‌خواهی مهارت جدیدی یاد بگیری یا مهارتت را به دیگران آموزش دهی. اینجا جای توست.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="rounded-full px-8 text-base bg-white text-[#20301C] hover:bg-neutral-100" asChild>
-              <Link href="/explore">کشف تجربه‌ها</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 text-base border-[#3A5631] hover:bg-[#2C4126] text-white bg-transparent" asChild>
-              <Link href="/host">میزبان شوید</Link>
-            </Button>
+            <Link href="/explore" className={buttonVariants({ size: "lg", className: "rounded-full px-8 text-base bg-white text-[#20301C] hover:bg-neutral-100" })}>
+              کشف تجربه‌ها
+            </Link>
+            <Link href="/host" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full px-8 text-base border-[#3A5631] hover:bg-[#2C4126] text-white bg-transparent" })}>
+              میزبان شوید
+            </Link>
           </div>
         </div>
       </section>

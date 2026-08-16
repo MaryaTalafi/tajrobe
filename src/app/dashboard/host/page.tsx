@@ -1,5 +1,5 @@
 import { api, mockUsers } from '@/lib/data/mock';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Users, Edit, Plus, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
@@ -23,12 +23,10 @@ export default async function HostDashboardPage() {
           <h1 className="text-3xl font-bold text-foreground mb-2">داشبورد میزبان</h1>
           <p className="text-muted-foreground">خوش آمدید، {host.name}</p>
         </div>
-        <Button asChild>
-          <Link href="/host" className="flex items-center gap-2">
-            <Plus className="w-4 h-4 shrink-0" />
-            ایجاد تجربه جدید
-          </Link>
-        </Button>
+        <Link href="/host" className={buttonVariants({ className: "flex items-center gap-2" })}>
+          <Plus className="w-4 h-4 shrink-0" />
+          ایجاد تجربه جدید
+        </Link>
       </div>
 
       <div className="space-y-12">
@@ -48,11 +46,9 @@ export default async function HostDashboardPage() {
                     }`}>
                       {event.status === 'PUBLISHED' ? 'منتشر شده' : 'پیش‌نویس'}
                     </span>
-                    <Button variant="ghost" size="sm" asChild>
-                      <Link href={`/events/${event.id}`} target="_blank" className="flex items-center gap-2 text-primary hover:text-primary-700">
-                        مشاهده صفحه <ExternalLink className="w-4 h-4 shrink-0" />
-                      </Link>
-                    </Button>
+                    <Link href={`/events/${event.id}`} target="_blank" className={buttonVariants({ variant: "ghost", size: "sm", className: "flex items-center gap-2 text-primary hover:text-primary-700" })}>
+                      مشاهده صفحه <ExternalLink className="w-4 h-4 shrink-0" />
+                    </Link>
                   </div>
                   <h2 className="text-xl font-bold mb-2">{event.title}</h2>
                   <div className="text-sm text-muted-foreground line-clamp-2" dangerouslySetInnerHTML={{ __html: event.description }} />
@@ -63,12 +59,10 @@ export default async function HostDashboardPage() {
                     <Users className="w-5 h-5 text-muted-foreground" />
                     <span>{event.registrationCount} ثبت‌نامی</span>
                   </div>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href={`/host?edit=${event.id}`} className="flex items-center gap-2">
-                      <Edit className="w-4 h-4 shrink-0" />
-                      ویرایش تجربه
-                    </Link>
-                  </Button>
+                  <Link href={`/host?edit=${event.id}`} className={buttonVariants({ variant: "outline", size: "sm", className: "flex items-center gap-2" })}>
+                    <Edit className="w-4 h-4 shrink-0" />
+                    ویرایش تجربه
+                  </Link>
                 </div>
               </div>
             </div>
