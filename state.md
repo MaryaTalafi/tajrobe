@@ -35,8 +35,8 @@
 
 ### Phase 2: Backend (Only after Phase 1 Sign-off)
 - [x] **Task 2.1:** Setup Prisma schema and PostgreSQL database (including seeded "سایر" fallback category).
-- [ ] **Task 2.2:** Implement OTP authentication endpoints, Upstash Redis session store, and "remember me" logic.
-- **Task 2.3:** Implement Event CRUD API and Host authorization (derived).
+- [x] **Task 2.2:** Implement OTP authentication endpoints, Upstash Redis session store, and "remember me" logic.
+- [ ] **Task 2.3:** Implement Event CRUD API and Host authorization (derived).
 - **Task 2.4:** Implement Registration, Favorite, and Rating endpoints.
 - **Task 2.5:** Implement Category admin endpoints (create/delete, with fallback protection).
 - **Task 2.6:** Implement Vercel Blob upload flow for event banners.

@@ -11,6 +11,7 @@
   "dependencies": {
     "@base-ui/react": "^1.7.0",
     "@prisma/client": "^7.9.1",
+    "@upstash/redis": "^1.38.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.31.0",
@@ -32,10 +33,17 @@
     "eslint-config-next": "15.5.23",
     "prisma": "^7.9.1",
     "tailwindcss": "^4",
-    "tsx": "^4.19.3",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
+  },
+  "allowScripts": {
+    "prisma@7.9.1": true,
+    "@prisma/engines@7.9.1": true,
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true,
+    "esbuild@0.28.2": true
   }
 }
