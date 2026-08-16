@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Search, User } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 
 export function Header() {
   return (
@@ -32,13 +32,13 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="hidden sm:flex text-primary">
+          <Link href="/host" className={buttonVariants({ variant: "ghost", className: "hidden sm:flex text-primary" })}>
             میزبان شوید
-          </Button>
-          <Button variant="outline" size="icon" className="rounded-full">
+          </Link>
+          <Link href="/dashboard/host" className={buttonVariants({ variant: "outline", size: "icon", className: "rounded-full" })}>
             <User className="h-4 w-4" />
             <span className="sr-only">حساب کاربری</span>
-          </Button>
+          </Link>
         </div>
       </div>
     </header>

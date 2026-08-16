@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { OtpModal } from '@/components/OtpModal';
+import { JalaliDatePicker } from '@/components/JalaliDatePicker';
 
 export function HostClient() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -71,11 +72,11 @@ export function HostClient() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium mb-2">تاریخ شروع <span className="text-destructive">*</span></label>
-              <input required type="date" className="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:outline-none bg-background" />
+              <JalaliDatePicker placeholder="انتخاب تاریخ" />
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">تاریخ پایان <span className="text-destructive">*</span></label>
-              <input required type="date" className="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:outline-none bg-background" />
+              <JalaliDatePicker placeholder="انتخاب تاریخ" />
             </div>
           </div>
 
