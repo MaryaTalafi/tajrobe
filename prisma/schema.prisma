@@ -1,0 +1,122 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum EventMode {
+  ONLINE
+  IN_PERSON
+  OFFLINE_RECORDED
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  UNPUBLISHED
+}
+
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  role          Role           @default(USER)
+  createdAt     DateTime       @default(now())
+  eventsHosted  Event[]        @relation("HostedEvents")
+  registrations Registration[]
+  favorites     Favorite[]
+  ratings       Rating[]
+}
+
+model OtpCode {
+  id        String   @id @default(cuid())
+  email     String
+  codeHash  String
+  expiresAt DateTime
+  consumed  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([email])
+}
+
+model Category {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  slug        String  @unique
+  isFallback  Boolean @default(false) // true only for "سایر" (Other)
+  events      Event[]
+}
+
+model Event {
+  id            String         @id @default(cuid())
+  title         String
+  description   String
+  bannerUrl     String
+  startDate     DateTime
+  endDate       DateTime
+  hasTime       Boolean        @default(false)
+  price         Int?
+  mode          EventMode
+  location      String?
+  joinLink      String?
+  recordingUrl  String?
+  status        EventStatus    @default(DRAFT)
+  hostId        String
+  host          User           @relation("HostedEvents", fields: [hostId], references: [id])
+  categoryId    String
+  category      Category       @relation(fields: [categoryId], references: [id])
+  registrations Registration[]
+  favorites     Favorite[]
+  ratings       Rating[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  @@index([status, startDate])
+  @@index([categoryId])
+  @@index([mode])
+}
+
+model Registration {
+  id             String    @id @default(cuid())
+  userId         String
+  eventId        String
+  user           User      @relation(fields: [userId], references: [id])
+  event          Event     @relation(fields: [eventId], references: [id])
+  reminderSentAt DateTime?
+  createdAt      DateTime  @default(now())
+
+  @@unique([userId, eventId])
+  @@index([eventId])
+}
+
+model Favorite {
+  id      String @id @default(cuid())
+  userId  String
+  eventId String
+  user    User   @relation(fields: [userId], references: [id])
+  event   Event  @relation(fields: [eventId], references: [id])
+
+  @@unique([userId, eventId])
+}
+
+model Rating {
+  id        String   @id @default(cuid())
+  userId    String
+  eventId   String
+  score     Int      // 1–5
+  comment   String?
+  user      User     @relation(fields: [userId], references: [id])
+  event     Event    @relation(fields: [eventId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, eventId])
+}

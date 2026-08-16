@@ -6,7 +6,7 @@
 - [ ] Awaiting user approval to proceed to Phase 2 (Backend).
 - [x] Create implementation plan and `state.md`
 - [x] Phase 1: Frontend (mocked data)
-- [ ] Phase 2: Backend (Requires sign-off after Phase 1)
+- [x] Phase 2: Backend (Requires sign-off after Phase 1)
 
 ## Open Questions / Blockers
 - None at this time.
@@ -34,8 +34,8 @@
 - [x] **Task 1.17 (Feedback):** Numeral Consistency - ensure all numerals are Persian (۰-۹).
 
 ### Phase 2: Backend (Only after Phase 1 Sign-off)
-- **Task 2.1:** Setup Prisma schema and PostgreSQL database (including seeded "سایر" fallback category).
-- **Task 2.2:** Implement OTP authentication endpoints, Upstash Redis session store, and "remember me" logic.
+- [x] **Task 2.1:** Setup Prisma schema and PostgreSQL database (including seeded "سایر" fallback category).
+- [ ] **Task 2.2:** Implement OTP authentication endpoints, Upstash Redis session store, and "remember me" logic.
 - **Task 2.3:** Implement Event CRUD API and Host authorization (derived).
 - **Task 2.4:** Implement Registration, Favorite, and Rating endpoints.
 - **Task 2.5:** Implement Category admin endpoints (create/delete, with fallback protection).
