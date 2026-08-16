@@ -22,7 +22,7 @@
 - [x] **Task 1.5:** Build Event Detail Page (Public info visible, gated info mocked; OTP modal interceptor; ratings/comments with "Experienced this" badge).
 - [x] **Task 1.6:** Build Create/Edit Event Form (RTL-native, Farsi validation). Trigger the mock OTP modal interceptor for guest users attempting to access the create-event flow, consistent with the same interceptor pattern used for event registration.
 - [x] **Task 1.7:** Build Host Dashboard (My events, attendee list with mock data).
-- **Task 1.8:** Build Admin Panel shell (Events table, users table, category management UI with fallback to "سایر" rule).
+- [x] **Task 1.8:** Build Admin Panel shell (Events table, users table, category management UI with fallback to "سایر" rule).
 - **Task 1.9:** Polish and Review: Ensure full responsiveness across devices and RTL correctness with real Farsi content.
 - **Task 1.10:** Write and run frontend tests (Component tests via Testing Library, responsive/RTL smoke checks, linting, type-checking).
 - **Task 1.11:** Deliver frontend, stop, and report back for Phase 1 approval before touching backend.
