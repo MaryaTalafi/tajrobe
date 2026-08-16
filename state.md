@@ -43,6 +43,6 @@
 - [x] **Task 2.7:** Integrate transactional email API for immediate confirmation and Vercel Cron for 1-hour reminder sweep.
 - [x] **Task 2.8:** Implement Google Calendar integration (pre-filled link and `.ics` generation).
 - [x] **Task 2.9:** Implement remaining Admin endpoints (Dashboard statistics: users, events, registrations).
-- **Task 2.10:** Replace Phase 1 mock data access layer with real API calls.
-- **Task 2.11:** Write and run Backend/Integration tests and Playwright E2E tests.
-- **Task 2.12:** Confirm Vercel-native monitoring is wired up.
+- [x] **Task 2.10:** Replace Phase 1 mock data access layer with real API calls.
+- [x] **Task 2.11:** Write and run Backend/Integration tests and Playwright E2E tests.
+- [x] **Task 2.12:** Confirm Vercel-native monitoring is wired up.
