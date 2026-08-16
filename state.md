@@ -39,10 +39,10 @@
 - [x] **Task 2.3:** Implement Event CRUD API and Host authorization (derived).
 - [x] **Task 2.4:** Implement Registration, Favorite, and Rating endpoints.
 - [x] **Task 2.5:** Implement Category admin endpoints (create/delete, with fallback protection).
-- **Task 2.6:** Implement Vercel Blob upload flow for event banners.
-- **Task 2.7:** Integrate transactional email API for immediate confirmation and Vercel Cron for 1-hour reminder sweep.
-- **Task 2.8:** Implement Google Calendar integration (pre-filled link and `.ics` generation).
-- **Task 2.9:** Implement Admin endpoints (users, events).
+- [x] **Task 2.6:** Implement Vercel Blob upload flow for event banners.
+- [x] **Task 2.7:** Integrate transactional email API for immediate confirmation and Vercel Cron for 1-hour reminder sweep.
+- [x] **Task 2.8:** Implement Google Calendar integration (pre-filled link and `.ics` generation).
+- [x] **Task 2.9:** Implement remaining Admin endpoints (Dashboard statistics: users, events, registrations).
 - **Task 2.10:** Replace Phase 1 mock data access layer with real API calls.
 - **Task 2.11:** Write and run Backend/Integration tests and Playwright E2E tests.
 - **Task 2.12:** Confirm Vercel-native monitoring is wired up.
