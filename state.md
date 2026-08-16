@@ -17,7 +17,7 @@
 - [x] **Task 1.1:** Scaffold Next.js 15 App Router project with Tailwind CSS, shadcn/ui, Vazirmatn font, RTL layout (`dir="rtl"`, Farsi locale), and theme colors (from PRD §6.2).
 - [x] **Task 1.1b:** Build global Header and Footer as shared layout components, used across all pages.
 - [x] **Task 1.2:** Build mock/fixture data layer in `lib/data/*.ts` as API stand-ins.
-- **Task 1.3:** Build Homepage following SB7 structure (Hero with animation, problem, guide, plan, CTA, stakes, popular experiences, final CTA).
+- [x] **Task 1.3:** Build Homepage following SB7 structure (Hero with animation, problem, guide, plan, CTA, stakes, popular experiences, final CTA).
 - **Task 1.4:** Build Explore Page (Public, search bar, filters for category/mode/price/date, responsive event card grid).
 - **Task 1.5:** Build Event Detail Page (Public info visible, gated info mocked; OTP modal interceptor; ratings/comments with "Experienced this" badge).
 - **Task 1.6:** Build Create/Edit Event Form (RTL-native, Farsi validation). Trigger the mock OTP modal interceptor for guest users attempting to access the create-event flow, consistent with the same interceptor pattern used for event registration.
