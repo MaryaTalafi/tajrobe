@@ -2,12 +2,13 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { getSession } from '@/lib/session';
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(request: Request, context: { params: Promise<{ id: string }> }) {
+  const { id } = await context.params;
   try {
     const session = await getSession();
     if (!session) return NextResponse.json({ error: 'احراز هویت الزامی است' }, { status: 401 });
 
-    const { id: eventId } = await params;
+    const eventId = id;
     const event = await prisma.event.findUnique({ where: { id: eventId } });
     if (!event) return NextResponse.json({ error: 'تجربه یافت نشد' }, { status: 404 });
 
@@ -19,7 +20,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
     const attendees = await prisma.registration.findMany({
       where: { eventId },
       include: {
-        user: { select: { id: true, name: true, email: true } },
+        user: { select: { id: true, email: true } },
       },
       orderBy: { createdAt: 'desc' },
     });

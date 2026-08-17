@@ -13,7 +13,7 @@ export async function GET() {
         event: {
           include: {
             category: true,
-            host: { select: { name: true, email: true } },
+            host: { select: { email: true } },
             _count: { select: { registrations: true } }
           }
         }

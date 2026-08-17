@@ -1,6 +1,12 @@
 import { prisma } from '@/lib/prisma';
 import { Event, Category, User, Rating } from '@/types';
 
+export const mockUsers: User[] = [
+  { id: 'u1', email: 'admin@tajrobe.ir', role: 'ADMIN', name: 'ادمین تجربه', createdAt: new Date().toISOString() },
+  { id: 'u2', email: 'host@tajrobe.ir', role: 'USER', name: 'علی رضایی', createdAt: new Date().toISOString() },
+  { id: 'u3', email: 'user@tajrobe.ir', role: 'USER', name: 'سارا احمدی', createdAt: new Date().toISOString() },
+];
+
 // We keep the types matching what the frontend expects, mapping Prisma outputs where needed.
 
 export const api = {
