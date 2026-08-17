@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft, Sparkles, Map, MousePointerClick, PartyPopper } from 'lucide-react';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import Image from 'next/image';
 import { EventCard } from '@/components/EventCard';
 import { api } from '@/lib/data/mock';

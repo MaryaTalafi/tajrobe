@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
 export const metadata = {
