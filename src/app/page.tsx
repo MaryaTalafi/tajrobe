@@ -166,7 +166,7 @@ export default async function HomePage() {
             فرقی نمی‌کنه بخوای یه مهارت جدید یاد بگیری یا تخصصت رو به بقیه آموزش بدی. اینجا جای توئه.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/explore" className={buttonVariants({ size: "lg", className: "rounded-full px-8 text-base bg-white text-[#20301C] hover:bg-neutral-100" })}>
+            <Link href="/explore" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full px-8 text-base border-[#3A5631] hover:bg-[#2C4126] text-white bg-transparent" })}>
               کشف تجربه‌ها
             </Link>
             <Link href="/host" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full px-8 text-base border-[#3A5631] hover:bg-[#2C4126] text-white bg-transparent" })}>

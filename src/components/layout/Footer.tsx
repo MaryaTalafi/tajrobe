@@ -46,7 +46,7 @@ export function Footer() {
             <Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               درباره تجربه
             </Link>
-            <Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Link href="/support" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               پشتیبانی
             </Link>
             <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors mt-2">
