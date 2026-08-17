@@ -40,7 +40,7 @@ export async function PATCH(request: Request, props: { params: Promise<{ id: str
 
     const body = await request.json();
     // Update fields conditionally
-    const dataToUpdate: Prisma.EventUpdateInput = {};
+    const dataToUpdate: Prisma.EventUncheckedUpdateInput = {};
     if (body.title) dataToUpdate.title = body.title;
     if (body.description) dataToUpdate.description = body.description;
     if (body.bannerUrl) dataToUpdate.bannerUrl = body.bannerUrl;
