@@ -37,6 +37,7 @@
 - [x] **Task 1.15 (Feedback):** Hero Headline Typing Animation (RTL).
 - [x] **Task 1.16 (Feedback):** Copy Tone adjustment - less formal, natural spoken Persian.
 - [x] **Task 1.17 (Feedback):** Numeral Consistency - ensure all numerals are Persian (۰-۹).
+- [x] **Task 1.18 (Feedback):** Static Pages and Copy Fixes - wire CTAs, fix button colors, add missing CTA, build static pages, fix host form copy.
 
 ### Phase 2: Backend (Only after Phase 1 Sign-off)
 - [x] **Task 2.1:** Setup Prisma schema and PostgreSQL database (including seeded "سایر" fallback category).

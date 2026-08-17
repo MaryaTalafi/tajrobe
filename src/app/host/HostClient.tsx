@@ -39,7 +39,7 @@ export function HostClient() {
       
       <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); alert("تجربه با موفقیت ایجاد شد!"); }}>
         <div className="space-y-6 bg-white p-6 rounded-2xl border shadow-sm">
-          <h2 className="text-xl font-semibold mb-4">اطلاعات پایه</h2>
+          <h2 className="text-xl font-semibold mb-4">چی می‌خوای برگزار کنی؟</h2>
           
           <div>
             <label className="block text-sm font-medium mb-2">عنوان تجربه <span className="text-destructive">*</span></label>
@@ -60,14 +60,14 @@ export function HostClient() {
           <div>
             <label className="block text-sm font-medium mb-2">تصویر کاور <span className="text-destructive">*</span></label>
             <div className="border-2 border-dashed rounded-xl p-8 text-center bg-neutral-50 hover:bg-neutral-100 transition-colors cursor-pointer">
-              <p className="text-muted-foreground text-sm mb-2">برای آپلود کلیک کنید یا عکس را اینجا رها کنید</p>
+              <p className="text-muted-foreground text-sm mb-2">برای آپلود کلیک کنید، یا عکس را همین‌جا رها کنید</p>
               <Button type="button" variant="outline" size="sm">انتخاب فایل</Button>
             </div>
           </div>
         </div>
 
         <div className="space-y-6 bg-white p-6 rounded-2xl border shadow-sm">
-          <h2 className="text-xl font-semibold mb-4">زمان و مکان</h2>
+          <h2 className="text-xl font-semibold mb-4">کِی و کجا برگزار می‌شه؟</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -141,7 +141,7 @@ export function HostClient() {
         </div>
 
         <div className="space-y-6 bg-white p-6 rounded-2xl border shadow-sm">
-          <h2 className="text-xl font-semibold mb-4">هزینه و جزئیات</h2>
+          <h2 className="text-xl font-semibold mb-4">جزئیات و هزینه</h2>
           
           <div>
             <label className="block text-sm font-medium mb-2">هزینه ثبت‌نام (تومان)</label>
@@ -150,7 +150,7 @@ export function HostClient() {
 
           <div>
             <label className="block text-sm font-medium mb-2">توضیحات تجربه <span className="text-destructive">*</span></label>
-            <textarea required className="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:outline-none min-h-[200px]" placeholder="در این تجربه چه اتفاقی می‌افتد؟ (می‌توانید از توضیحات غنی استفاده کنید)"></textarea>
+            <textarea required className="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:outline-none min-h-[200px]" placeholder="در این تجربه چه اتفاقی می‌افتد؟ هرچی بیشتر بگی، تجربه‌گراها بهتر تصمیم می‌گیرن."></textarea>
           </div>
         </div>
         
