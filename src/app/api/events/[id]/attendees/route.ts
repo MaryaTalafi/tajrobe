@@ -8,7 +8,7 @@ export async function GET(request: Request, context: { params: Promise<{ id: str
     const session = await getSession();
     if (!session) return NextResponse.json({ error: 'احراز هویت الزامی است' }, { status: 401 });
 
-    const { id: eventId } = await params;
+    const eventId = id;
     const event = await prisma.event.findUnique({ where: { id: eventId } });
     if (!event) return NextResponse.json({ error: 'تجربه یافت نشد' }, { status: 404 });
 
@@ -20,7 +20,7 @@ export async function GET(request: Request, context: { params: Promise<{ id: str
     const attendees = await prisma.registration.findMany({
       where: { eventId },
       include: {
-        user: { select: { id: true, name: true, email: true } },
+        user: { select: { id: true, email: true } },
       },
       orderBy: { createdAt: 'desc' },
     });

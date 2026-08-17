@@ -8,7 +8,7 @@ export async function POST(request: Request, context: { params: Promise<{ id: st
     const session = await getSession();
     if (!session) return NextResponse.json({ error: 'احراز هویت الزامی است' }, { status: 401 });
 
-    const { id: eventId } = await params;
+    const eventId = id;
     
     // Check if event exists
     const event = await prisma.event.findUnique({ where: { id: eventId } });

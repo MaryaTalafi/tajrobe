@@ -16,7 +16,7 @@ export async function GET() {
       prisma.event.findMany({
         take: 5,
         orderBy: { createdAt: 'desc' },
-        include: { host: { select: { name: true, email: true } } },
+        include: { host: { select: { email: true } } },
       }),
     ]);
 

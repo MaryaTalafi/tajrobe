@@ -10,8 +10,6 @@ export async function DELETE(request: Request, context: { params: Promise<{ id: 
       return NextResponse.json({ error: 'عدم دسترسی' }, { status: 403 });
     }
 
-    const { id } = await params;
-    
     // Find category to delete
     const categoryToDelete = await prisma.category.findUnique({ where: { id } });
     if (!categoryToDelete) {

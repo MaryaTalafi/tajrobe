@@ -13,6 +13,7 @@ export const prisma =
   (function () {
     const connectionString = process.env.POSTGRES_PRISMA_URL;
     const pool = new Pool({ connectionString });
+    // @ts-expect-error pool types mismatch between pg and neon
     const adapter = new PrismaNeon(pool);
     return new PrismaClient({ adapter, log: ['query'] });
   })();

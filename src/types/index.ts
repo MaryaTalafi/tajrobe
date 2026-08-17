@@ -6,7 +6,7 @@ export interface User {
   id: string;
   email: string;
   role: Role;
-  createdAt: string;
+  createdAt: Date | string;
   name?: string;
   avatarUrl?: string;
 }
@@ -28,9 +28,9 @@ export interface Event {
   hasTime: boolean;
   price: number | null; // null/0 == free
   mode: EventMode;
-  location?: string; // IN_PERSON
-  joinLink?: string; // ONLINE
-  recordingUrl?: string; // OFFLINE_RECORDED
+  location?: string | null; // IN_PERSON
+  joinLink?: string | null; // ONLINE
+  recordingUrl?: string | null; // OFFLINE_RECORDED
   status: EventStatus;
   hostId: string;
   host?: User;
@@ -38,7 +38,7 @@ export interface Event {
   category?: Category;
   registrationCount?: number;
   averageRating?: number;
-  createdAt: string;
+  createdAt: Date | string;
   updatedAt: string;
 }
 
@@ -47,7 +47,7 @@ export interface Rating {
   userId: string;
   eventId: string;
   score: number; // 1-5
-  comment?: string;
+  comment?: string | null;
   user?: User;
-  createdAt: string;
+  createdAt: Date | string;
 }

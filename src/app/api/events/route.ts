@@ -45,7 +45,7 @@ export async function GET(request: Request) {
       orderBy: { startDate: 'asc' },
       include: {
         category: true,
-        host: { select: { name: true, email: true } },
+        host: { select: { email: true } },
         _count: { select: { registrations: true } },
       },
     });

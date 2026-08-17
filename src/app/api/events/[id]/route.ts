@@ -5,12 +5,11 @@ import { getSession } from '@/lib/session';
 export async function GET(request: Request, context: { params: Promise<{ id: string }> }) {
   const { id } = await context.params;
   try {
-    const { id } = await params;
     const event = await prisma.event.findUnique({
       where: { id },
       include: {
         category: true,
-        host: { select: { id: true, name: true, email: true } },
+        host: { select: { id: true, email: true } },
         _count: { select: { registrations: true, favorites: true } },
       },
     });
@@ -26,12 +25,12 @@ export async function GET(request: Request, context: { params: Promise<{ id: str
   }
 }
 
-export async function PATCH(request: Request, { params }: { params: { id: string } }) {
+export async function PATCH(request: Request, props: { params: Promise<{ id: string }> }) {
+  const { id } = await props.params;
   try {
     const session = await getSession();
     if (!session) return NextResponse.json({ error: 'احراز هویت الزامی است' }, { status: 401 });
 
-    const { id } = await params;
     const event = await prisma.event.findUnique({ where: { id } });
     
     if (!event) return NextResponse.json({ error: 'تجربه یافت نشد' }, { status: 404 });
@@ -74,7 +73,6 @@ export async function DELETE(request: Request, context: { params: Promise<{ id: 
     const session = await getSession();
     if (!session) return NextResponse.json({ error: 'احراز هویت الزامی است' }, { status: 401 });
 
-    const { id } = await params;
     const event = await prisma.event.findUnique({ where: { id } });
     
     if (!event) return NextResponse.json({ error: 'تجربه یافت نشد' }, { status: 404 });

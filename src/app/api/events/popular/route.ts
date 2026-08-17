@@ -16,7 +16,7 @@ export async function GET() {
       include: {
         category: true,
         host: {
-          select: { name: true, email: true },
+          select: { email: true },
         },
         _count: {
           select: { registrations: true },
