@@ -8,6 +8,6 @@ test('homepage loads and displays hero', async ({ page }) => {
   await expect(heading).toContainText('لحظه‌هایی که زندگی');
 
   // Check CTA buttons
-  const exploreBtn = page.getByRole('link', { name: 'کشف تجربه‌ها' });
+  const exploreBtn = page.getByRole('link', { name: 'کشف تجربه‌ها' }).first();
   await expect(exploreBtn).toBeVisible();
 });
