@@ -1,5 +1,5 @@
 import { api, mockUsers } from '@/lib/data/mock';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { Users, Edit, Plus, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';

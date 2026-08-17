@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { getSession } from '@/lib/session';
-
+import { Prisma } from '@prisma/client';
 export async function GET(request: Request, context: { params: Promise<{ id: string }> }) {
   const { id } = await context.params;
   try {
@@ -40,7 +40,7 @@ export async function PATCH(request: Request, props: { params: Promise<{ id: str
 
     const body = await request.json();
     // Update fields conditionally
-    const dataToUpdate: any = {};
+    const dataToUpdate: Prisma.EventUpdateInput = {};
     if (body.title) dataToUpdate.title = body.title;
     if (body.description) dataToUpdate.description = body.description;
     if (body.bannerUrl) dataToUpdate.bannerUrl = body.bannerUrl;

@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import { Event, Category, User, Rating } from '@/types';
+import { User } from '@/types';
 
 export const mockUsers: User[] = [
   { id: 'u1', email: 'admin@tajrobe.ir', role: 'ADMIN', name: 'ادمین تجربه', createdAt: new Date().toISOString() },
@@ -29,7 +29,7 @@ export const api = {
         createdAt: e.createdAt.toISOString(),
         updatedAt: e.updatedAt.toISOString(),
       }));
-    } catch (e) {
+    } catch {
       console.warn("DB not connected, returning empty events.");
       return [];
     }
@@ -54,7 +54,7 @@ export const api = {
         createdAt: e.createdAt.toISOString(),
         updatedAt: e.updatedAt.toISOString(),
       };
-    } catch (e) {
+    } catch {
       return null;
     }
   },
@@ -79,7 +79,7 @@ export const api = {
         createdAt: e.createdAt.toISOString(),
         updatedAt: e.updatedAt.toISOString(),
       }));
-    } catch (e) {
+    } catch {
       console.warn("DB not connected, returning empty popular events.");
       return [];
     }
@@ -88,7 +88,7 @@ export const api = {
   getCategories: async () => {
     try {
       return await prisma.category.findMany({ orderBy: { id: 'asc' } });
-    } catch (e) {
+    } catch {
       return [];
     }
   },
@@ -105,7 +105,7 @@ export const api = {
         createdAt: r.createdAt.toISOString(),
         updatedAt: r.updatedAt.toISOString(),
       }));
-    } catch (e) {
+    } catch {
       return [];
     }
   },

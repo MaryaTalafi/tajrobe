@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { getSession } from '@/lib/session';
-
+import { Prisma } from '@prisma/client';
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -15,7 +15,7 @@ export async function GET(request: Request) {
     const page = parseInt(searchParams.get('page') || '1');
     const limit = 12;
 
-    const where: any = { status: 'PUBLISHED' };
+    const where: Prisma.EventWhereInput = { status: 'PUBLISHED' };
 
     if (search) {
       where.OR = [

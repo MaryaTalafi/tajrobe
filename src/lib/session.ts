@@ -45,7 +45,7 @@ export async function getSession(): Promise<SessionPayload | null> {
 
   try {
     return typeof sessionStr === 'string' ? JSON.parse(sessionStr) : sessionStr;
-  } catch (e) {
+  } catch {
     return null;
   }
 }

@@ -11,7 +11,7 @@ import { toPersianDigits } from '@/lib/utils';
 export function EventDetailClient({ event, ratings }: { event: Event, ratings: Rating[] }) {
   const [isRegistered, setIsRegistered] = useState(false);
   const [isOtpOpen, setIsOtpOpen] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite] = useState(false);
   
   const isFree = event.price === null || event.price === 0;
 

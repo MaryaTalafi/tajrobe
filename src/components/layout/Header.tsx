@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Search, User } from 'lucide-react';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 
 export function Header() {
   return (
